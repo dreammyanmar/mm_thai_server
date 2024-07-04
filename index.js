@@ -10,12 +10,12 @@ const {question} = require("./routers/question");
 const {auth} = require("./routers/auth");
 const { corsOptions } = require("./middleware/cors_options");
 
-if(!config.get("jwtPrivateKey")){
+/* if(!config.get("jwtPrivateKey")){
     console.log("JWTPrivateKey is not defined");
     process.exit(1);
-}
+} */
 
-const db = config.get("db");
+const db = "mongodb+srv://aungbomyint292:XtupvKhrrGLYvGja@cluster0.wmahi4f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; /* config.get("db"); */
 mongoose.connect(db)
 .then((result) => {
     console.log(`Mongodb is connected to ${db}....`);
